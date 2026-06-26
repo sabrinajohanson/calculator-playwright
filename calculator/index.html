@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>Calculadora</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div data-testid="calculator">
+
+    <span data-testid="expression"></span>
+    <span data-testid="result">0</span>
+
+    <div class="buttons">
+      <button class="btn-action" data-testid="btn-clear" onclick="clearALL()">AC</button>
+      <button class="btn-action" data-testid="btn-sign" onclick="sign()">+/−</button>
+      <button class="btn-action" data-testid="btn-percent" onclick="percent()">%</button>
+      <button class="btn-operator" data-testid="btn-divide" onclick="operator('/')">÷</button>
+
+      <button data-testid="btn-7" onclick="digit('7')">7</button>
+      <button data-testid="btn-8" onclick="digit('8')">8</button>
+      <button data-testid="btn-9" onclick="digit('9')">9</button>
+      <button class="btn-operator" data-testid="btn-multiply" onclick="operator('*')">×</button>
+
+      <button data-testid="btn-4" onclick="digit('4')">4</button>
+      <button data-testid="btn-5" onclick="digit('5')">5</button>
+      <button data-testid="btn-6" onclick="digit('6')">6</button>
+      <button class="btn-operator" data-testid="btn-subtract" onclick="operator('-')">−</button>
+
+      <button data-testid="btn-1" onclick="digit('1')">1</button>
+      <button data-testid="btn-2" onclick="digit('2')">2</button>
+      <button data-testid="btn-3" onclick="digit('3')">3</button>
+      <button class="btn-operator" data-testid="btn-add" onclick="operator('+')">+</button>
+
+      <button class="btn-zero" data-testid="btn-0" onclick="digit('0')">0</button>
+      <button data-testid="btn-dot" onclick="dot()">.</button>
+      <button class="btn-operator" data-testid="btn-equals" onclick="equals()">=</button>
+    </div>
+
+  </div>
+
+  <script src="calculator.js"></script>
+</body>
+</html>
