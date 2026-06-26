@@ -38,13 +38,13 @@ python -m pytest tests/ -v
 ### 3. Run with visible browser
 
 ```bash
-python -m pytest tests/ -v --headed --slowmo 500
+python -m pytest tests/ -v --headed
 ```
 
 ### 4. Run with HTML report
 
 ```bash
-python -m pytest tests/ -v --headed --slowmo 500 --html=report.html
+python -m pytest tests/ -v --headed --html=report.html
 ```
 
 ---
