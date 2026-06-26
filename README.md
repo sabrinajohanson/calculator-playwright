@@ -1,4 +1,68 @@
-## 🐛 Bugs found during development
+# calculator-playwright
+
+First project of my QA portfolio.
+A web calculator built with HTML, CSS and JavaScript, covered with end-to-end tests using **Python + Playwright**.
+
+---
+
+## Project structure
+
+```
+calculator-playwright/
+├── calculator/
+│   ├── index.html          # Calculator interface
+│   ├── calculator.js       # Business logic
+│   └── style.css           # Visual style
+├── tests/
+│   └── test_calculator.py  # E2E tests
+├── requirements.txt
+└── README.md
+```
+
+---
+
+## How to run the tests
+
+### 1. Install dependencies
+
+```bash
+pip install -r requirements.txt
+python -m playwright install chromium
+```
+
+### 2. Run all tests
+
+```bash
+python -m pytest tests/ -v
+```
+
+### 3. Run with visible browser
+
+```bash
+python -m pytest tests/ -v --headed --slowmo 500
+```
+
+### 4. Run with HTML report
+
+```bash
+python -m pytest tests/ -v --headed --slowmo 500 --html=report.html
+```
+
+---
+
+## Test coverage
+
+| Group | Cases |
+|---|---|
+| Basic operations | Addition, subtraction, multiplication, division, decimal |
+| Display | Initial state, real-time update, history |
+| Clear | C button, backspace one digit at a time, backspace on result |
+| Chained operations | Sequence of operations, operator change |
+| Special functions | Percentage, sign toggle, decimal point |
+
+---
+
+## Bugs found during development
 
 | # | Bug | Root cause | Status |
 |---|---|---|---|
@@ -8,3 +72,20 @@
 | [#4](https://github.com/sabrinajohanson/calculator-playwright/issues/4) | Percent calculating value instead of percentage | `percent()` was always dividing by 100 regardless of context | ✅ Fixed |
 | [#5](https://github.com/sabrinajohanson/calculator-playwright/issues/5) | Numbers losing precision after 15 digits | JavaScript IEEE 754 floating point limitation | ✅ Fixed |
 | [#6](https://github.com/sabrinajohanson/calculator-playwright/issues/6) | Backspace blocked after pressing equals | Early return when `justCalculated` was true | ✅ Fixed |
+
+---
+
+## Known limitations
+
+- Numbers are limited to 15 digits (JavaScript IEEE 754 floating point precision)
+- Decimal separator is a dot `.` (international standard)
+- Thousand separator is not supported
+
+---
+
+## Stack
+
+- Python 3.11+
+- Playwright 1.60
+- Pytest + pytest-playwright
+- pytest-html (test reports)
