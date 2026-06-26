@@ -9,14 +9,16 @@
 
   <div data-testid="calculator">
 
-    <span data-testid="expression"></span>
-    <span data-testid="result">0</span>
+    <div class="display">
+      <span data-testid="expression"></span>
+      <span data-testid="result">0</span>
+    </div>
 
     <div class="buttons">
+      <button class="btn-action" data-testid="btn-backspace" onclick="backspace()">⌫</button>
       <button class="btn-action" data-testid="btn-clear" onclick="clearALL()">AC</button>
-      <button class="btn-action" data-testid="btn-sign" onclick="sign()">+/−</button>
       <button class="btn-action" data-testid="btn-percent" onclick="percent()">%</button>
-      <button class="btn-operator" data-testid="btn-divide" onclick="operator('/')">÷</button>
+      <button class="btn-operator" data-testid="btn-divide"  onclick="operator('/')">÷</button>
 
       <button data-testid="btn-7" onclick="digit('7')">7</button>
       <button data-testid="btn-8" onclick="digit('8')">8</button>
@@ -33,7 +35,8 @@
       <button data-testid="btn-3" onclick="digit('3')">3</button>
       <button class="btn-operator" data-testid="btn-add" onclick="operator('+')">+</button>
 
-      <button class="btn-zero" data-testid="btn-0" onclick="digit('0')">0</button>
+      <button class="btn-action"   data-testid="btn-sign" onclick="sign()">+/−</button>
+      <button data-testid="btn-0"  onclick="digit('0')">0</button>
       <button data-testid="btn-dot" onclick="dot()">.</button>
       <button class="btn-operator" data-testid="btn-equals" onclick="equals()">=</button>
     </div>
