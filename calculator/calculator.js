@@ -46,7 +46,7 @@ function operator(op) {
 
   if (currentNumber !== '') {
     if (pendingOp !== null) {
-      // Calcula o resultado acumulado
+    // Calculate the accumulated result
       const result = calculate(pendingValue, pendingOp, parseFloat(currentNumber))
       pendingValue = result
       history = history + currentNumber + ' ' + op + ' '
@@ -57,7 +57,7 @@ function operator(op) {
     currentNumber = ''
     pendingOp = op
   } else {
-    // Troca de operador sem digitar número novo
+    // Operator changed before typing a new number
     history = history.trimEnd().slice(0, -1) + op + ' '
     pendingOp = op
   }
@@ -70,10 +70,10 @@ function equals() {
 
   const result = calculate(pendingValue, pendingOp, parseFloat(currentNumber))
 
-  // Histórico sobe com a expressão completa
+  // History shows the full expression
   history = history + currentNumber + ' ='
 
-  // Resultado aparece embaixo
+  // Result appears below
   currentNumber = String(result)
   pendingOp = null
   pendingValue = null
@@ -125,10 +125,10 @@ function percent() {
   if (currentNumber === '') return
 
   if (pendingValue !== null) {
-    // Calcula % em relação ao número anterior
+    // Calculate % relative to the previous number
     currentNumber = String(pendingValue * parseFloat(currentNumber) / 100)
   } else {
-    // Sem operação pendente, divide por 100 normalmente
+    // No pending operation, just divide by 100
     currentNumber = String(parseFloat(currentNumber) / 100)
   }
   render()
