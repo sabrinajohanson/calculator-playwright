@@ -1,6 +1,5 @@
 # calculator-playwright
 
-First project of my QA portfolio.
 A web calculator built with HTML, CSS and JavaScript, covered with end-to-end tests using **Python + Playwright**.
 
 ---
