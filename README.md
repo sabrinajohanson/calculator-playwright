@@ -1,5 +1,7 @@
 # calculator-playwright
 
+[![CI](https://github.com/sabrinajohanson/calculator-playwright/actions/workflows/ci.yml/badge.svg)](https://github.com/sabrinajohanson/calculator-playwright/actions/workflows/ci.yml)
+
 A web calculator built with HTML, CSS and JavaScript, covered with end-to-end tests using **Python + Playwright**.
 
 ---
