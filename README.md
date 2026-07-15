@@ -49,6 +49,8 @@ python -m pytest tests/ -v --headed
 python -m pytest tests/ -v --headed --html=report.html
 ```
 
+---
+
 ## Test reports
 
 Every push automatically publishes a full [Allure Report](https://sabrinajohanson.github.io/calculator-playwright/) with the detailed results of the test suite (suites, timeline, and per-test steps).
